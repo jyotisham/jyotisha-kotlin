@@ -28,7 +28,8 @@ object Tithis {
 
     @JvmStatic
     fun main(p: Array<String>) {
-        val sw = SwissEph("./ephe")
+        print(ClassLoader.getSystemResource("swisseph").file)
+        val sw = SwissEph(ClassLoader.getSystemResource("swisseph").file)
         if (calcTopocentric) {
             sw.swe_set_topo(73.827298, 15.500439, 0.0)
         }

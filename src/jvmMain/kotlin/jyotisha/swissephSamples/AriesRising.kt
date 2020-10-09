@@ -14,7 +14,7 @@ object AriesRising {
     private const val tzOffset = 5.5
     @JvmStatic
     fun main(p: Array<String>) {
-        val sw = SwissEph("./ephe")
+        val sw = SwissEph(ClassLoader.getSystemResource("swisseph").file)
 
         // 0:00h on May 8, 2014 Indian Standard Time = UTC + 5.5
         // So, use a starting date of 2014-05-08, 0:00h - 5.5h:

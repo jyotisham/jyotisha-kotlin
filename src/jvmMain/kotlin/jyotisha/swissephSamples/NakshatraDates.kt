@@ -42,7 +42,7 @@ class NakshatraDates {
 		"रेवती",
 	};
 */
-    var sw = SwissEph("./ephe")
+    var sw = SwissEph(ClassLoader.getSystemResource("swisseph").file)
     fun getNextNakshatraStart(juld: Double, nakshatra: Int, topoctr: Boolean): Double {
         val geopos = doubleArrayOf(77.5667, 12.9667, 0.0)
         sw.swe_set_sid_mode(SweConst.SE_SIDM_LAHIRI, 0.0, 0.0)
