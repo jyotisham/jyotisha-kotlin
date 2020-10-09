@@ -1,4 +1,4 @@
-package jyotisha.swissephSamples
+package jyotisha.ephemeris.swissephSamples
 
 import swisseph.*
 

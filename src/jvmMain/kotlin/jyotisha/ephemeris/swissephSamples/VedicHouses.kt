@@ -1,4 +1,4 @@
-package jyotisha.swissephSamples
+package jyotisha.ephemeris.swissephSamples
 
 import swisseph.SweConst
 import swisseph.SweDate
@@ -58,7 +58,7 @@ object VedicHouses {
 
         // Get and print lagna:
         var flags = SweConst.SEFLG_SIDEREAL
-        val result = sw.swe_houses(
+        sw.swe_houses(
             sd.julDay,
             flags,
             latitude,
@@ -129,6 +129,7 @@ object VedicHouses {
         )
     }
 
+    @Suppress("NAME_SHADOWING")
     fun toHMS(d: Double): String {
         var d = d
         d += 0.5 / 3600.0 // round to one second
@@ -140,7 +141,7 @@ object VedicHouses {
     }
 
     fun toDMS(d: Double): String {
-        var d = d
+        @Suppress("NAME_SHADOWING") var d = d
         d += 0.5 / 3600.0 / 10000.0 // round to 1/1000 of a second
         val deg = d.toInt()
         d = (d - deg) * 60
