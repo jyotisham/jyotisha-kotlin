@@ -1,0 +1,29 @@
+plugins {
+    id 'org.jetbrains.kotlin.multiplatform' version '1.4.10'
+}
+
+group 'sanskrit-coders'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+kotlin {
+    jvm()
+
+    sourceSets {
+        commonMain {
+            dependencies {
+                implementation kotlin('stdlib-common')
+                implementation fileTree(dir: 'libs', include: ['*.jar'])
+            }
+        }
+        commonTest {
+            dependencies {
+                implementation kotlin('test-common')
+                implementation kotlin('test-annotations-common')
+            }
+        }
+    }
+}
