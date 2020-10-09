@@ -1,4 +1,4 @@
-package jyotisha
+package jyotisha.swissephSamples
 
 import swisseph.SweConst
 import swisseph.SweDate

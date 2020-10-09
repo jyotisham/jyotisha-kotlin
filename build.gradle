@@ -7,13 +7,16 @@ version '1.0-SNAPSHOT'
 
 repositories {
     mavenCentral()
+    flatDir {
+        dirs 'libs'
+    }
 }
 
 kotlin {
     jvm()
 
     sourceSets {
-        commonMain {
+        jvmMain {
             dependencies {
                 implementation kotlin('stdlib-common')
                 implementation fileTree(dir: 'libs', include: ['*.jar'])
