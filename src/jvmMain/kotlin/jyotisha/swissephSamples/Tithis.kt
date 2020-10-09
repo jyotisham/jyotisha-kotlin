@@ -1,10 +1,6 @@
 package jyotisha.swissephSamples
 
-import swisseph.SweConst
-import swisseph.SweDate
-import swisseph.SwissEph
-import swisseph.TCPlanetPlanet
-import swisseph.TransitCalculator
+import swisseph.*
 
 // Calculates one cycle of tithis
 //
@@ -68,9 +64,9 @@ object Tithis {
             var h: Double = sout.getHour()
             h += 0.5 / 3600.0
             val hour = h.toInt()
-            val min = ((h - hour) * 60) as Int
-            val sec = (((h - hour) * 60 - min) * 60) as Int
-            java.lang.System.out.printf(
+            val min = ((h - hour) * 60).toInt()
+            val sec = (((h - hour) * 60 - min) * 60).toInt()
+            System.out.printf(
                 "%26s: %2d/%02d/%04d %2d:%02d:%02dh, JD: %.10f\n",
                 name, day, mon, year, hour, min, sec, nextTransitUT
             )
